@@ -43,7 +43,7 @@ namespace Treehouse.FitnessFrog.Controllers
         {
             var entry = new Entry();
             {
-                Date = DateTime.Today;
+                DateTime date = DateTime.Today;
             };
             return View(entry);
         }
@@ -54,7 +54,8 @@ namespace Treehouse.FitnessFrog.Controllers
             if (ModelState.IsValid)
             {
                 _entriesRepository.AddEntry(entry);
-                // TODO Display the Entries list page
+
+                return RedirectToAction("Index");
             }
             return View(entry);
         }
