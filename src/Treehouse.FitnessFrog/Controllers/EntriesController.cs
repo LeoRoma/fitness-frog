@@ -118,7 +118,6 @@ namespace Treehouse.FitnessFrog.Controllers
             return View(entry);
         }
 
-        [HttpDelete]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -136,7 +135,7 @@ namespace Treehouse.FitnessFrog.Controllers
             return View(entry);
         }
 
-        [HttpDelete]
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             _entriesRepository.DeleteEntry(id);
